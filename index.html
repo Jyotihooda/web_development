@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #222;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            position: fixed;
+            background-color: #352e2e;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Add this CSS to your existing styles */
+.a {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+            
+ 
+
+        
+
+        .nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav ul {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 7px 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav.active {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav.active a {
+            color: #000;
+        }
+
+        .nav.active .container {
+            padding: 10px 0;
+        }
+
+        .nav a.current,
+        .nav a:hover {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        /* Styles for the dropdown menu */
+        .has-dropdown {
+            position: relative;
+        }
+
+        .has-dropdown .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+            z-index: 1;
+        }
+
+        .has-dropdown:hover .dropdown {
+            display: block;
+        }
+
+        .has-dropdown .dropdown li {
+            padding: 10px;
+        }
+
+        .has-dropdown .dropdown a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .has-dropdown .dropdown a:hover {
+            background-color: #555;
+        }
+        
+
+        /* Add styles for two columns */
+        .columns {
+  display: flex;
+  margin: 87px 0px 0px 0px;
+  width: 125%;
+}
+
+        .column {
+            flex: 1;
+            padding-right: 0;
+            margin-right: 0;
+            margin-left: 0;
+            width: 100vw;
+        }
+        /* Close Icon Style */
+.close-icon {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.close-icon::before,
+.close-icon::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color:white; /* Change the color as needed */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.close-icon::before {
+    transform: rotate(45deg);
+}
+
+.close-icon::after {
+    transform: rotate(-45deg);
+}
+
+/* Icon Hover Effect */
+.close-icon:hover::before,
+.close-icon:hover::after {
+    background-color: #555; /* Change the hover color as needed */
+}
+
+        
+   
+        .image{
+            width: 80vw;
+            height: 75vh;
+        }
+        
+        .column.orange-bg img.b {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+        }
+
+
+
+        .h1 {
+        
+color: white;
+ font-size: 135px;
+ font-family: Syne;
+ font-weight: 800;
+ line-height: 102.60px;
+ word-wrap: break-word
+           
+        }
+
+        .h1second {
+            font-family: Syne;
+            font-weight: 600;
+            font-size: 135px;
+            line-height: 102.6px;
+            color: white;
+        }
+
+        /* Fixed sidenav, full height */
+        .sidenav {
+  width: 200px;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin-top: 80px;
+}
+ .heading ul li {
+     list-style: none;
+    
+}
+ .heading ul li a {
+     margin:5px;
+     text-decoration: none;
+     color:black;
+     font-weight: 500;
+     position:relative;
+     color:white;
+     margin:2px 14px;
+     font-size: 18px;
+     transition-duration: 1s;
+    
+}
+
+ .heading ul li a:active {
+    color:red;
+    
+}
+ .heading ul li a:hover {
+     color:rgb(243, 168, 7);
+     transition-duration: 1s;
+    
+}
+
+ .heading ul li a::before {
+    content:'';
+     height:2px;
+     width:0px;
+     position:absolute;
+     left:0;
+ bottom:0;
+     background-color: white;
+     transition-duration: 1s;
+
+}
+
+ .heading ul li a:hover::before {
+     width:100%;
+     transition-duration: 1s;
+     background-color:rgb(243, 168, 7);
+
+}
+
+ #input {
+     height:30px;
+     width:300px;
+     text-decoration: none;
+ border:0px;
+     padding:5px;
+
+}
+
+ .logo a {
+     color: white;
+     font-size: 35px;
+     font-weight: 500;
+     text-decoration:none;
+    
+}
+
+ion-icon {
+     width:30px;
+     height:30px;
+    background-color: white;
+     color:black;
+    
+}
+
+ion-icon:hover {
+     cursor: pointer;
+    
+}
+
+ .search a {
+     display:flex;
+    
+}
+
+header a ion-icon {
+     position:relative;
+     right:3px;
+    
+}
+.content{
+    background-image: url(image/img.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 5%;
+    display: flex;
+    float: center;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    color: rgb(54, 51, 48);
+    height: 100vh;
+}
+.content h1{
+    font-size: 60px;
+}
+.content h2{
+    font-size:50 ;
+}
+.pheading{
+    font-size: 60px;
+    text-decoration: underline;
+}
+
+
+ .heading1 {
+    opacity:0;
+    
+}
+        /* Style the sidenav links and the dropdown button */
+        .sidenav a, .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* On mouse-over */
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 200px; /* Same as the width of the sidenav */
+            font-size: 20px; /* Increased text to enable scrolling */
+            margin-top: -231px;
+        }
+
+        /* Add an active class to the active dropdown button */
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: #262626;
+            padding-left: 8px;
+        }
+
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+        .search {
+     display:flex;
+     position: relative;
+    
+}
+
+ .section1 {
+     width:1080px;
+     overflow:hidden;
+ justify-content: center;
+     align-items: center;
+     margin:0px auto;
+    
+}
+
+ .section2 .container {
+     display:flex;
+     width:100%;
+     height:max-content;
+     flex-wrap: wrap;
+     justify-content:center;
+     margin:10px auto;
+    
+}
+
+ .section2 .container .items {
+     margin: 10px;
+     width:200px;
+     height: 300px;
+     background-color:white;
+     border:2.5px solid black;
+     border-radius: 12px;
+    
+}
+
+ .section2 .container .items .name {
+     text-align:center;
+     background-color:rgb(240, 197, 6);
+     height:25px;
+     color:white;
+     margin: 0;
+    
+}
+.container {
+  max-width: 1350px !important;
+  }
+ 
+
+
+ .section2 .container .items .price {
+     float:left;
+     padding-left:10px;
+     display: block;
+     width:100%;
+     color:rgb(255, 0, 0);
+     font-weight: 650;
+    
+}
+
+.section2 .container .items .info {
+     padding-left:10px;
+     color:rgb(243, 168, 7);
+     font-size: 12px;
+    
+}
+
+ .section2 .container .items .img img {
+     width:200px;
+     height:200px;
+     margin: 0;
+     padding: 0;
+     border-radius:12px;
+     transition-duration:0.8s;
+    
+}
+
+ .section2 .container .items .img {
+     overflow: hidden;
+     margin: 0;
+    
+}
+
+ .section2 .container .items:hover .img img {
+     transform: scale(1.2);
+     transition-duration:0.8s;
+     border-radius:12px;
+    
+    
+}
+/* Style for the footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+
+
+footer .contact-details {
+    flex: 1;
+    text-align: left;
+}
+
+footer .contact-details p {
+    margin: 5px 0;
+    border-bottom: 2px solid #000; /* Adjust the color and thickness as needed */
+    padding-bottom: 4px; /* Adjust the distance between text and underline */
+}
+
+footer .copyright {
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #222; /* Background color of the copyright notice */
+    color: #fff; /* Text color of the copyright notice */
+}
+
+
+@media (min-width: 768px) {
+    /* Styles for tablets and larger screens */
+    .container {
+        max-width: 768px; /* Adjust as needed */
+    }
+
+    /* Add other tablet-specific styles here */
+}
+
+/* Media query for screens 992px and larger (e.g., small desktops) */
+@media (min-width: 992px) {
+    /* Styles for small desktops and larger screens */
+    .container {
+        max-width: 992px; /* Adjust as needed */
+    }
+
+    /* Add other small desktop-specific styles here */
+}
+
+/* Media query for screens 1200px and larger (e.g., large desktops) */
+@media (min-width: 1200px) {
+    /* Styles for large desktop screens */
+    .container {
+        max-width: 1200px; /* Adjust as needed */
+    }   
+       /* Styles for larger screens (e.g., desktops) */
+@media (min-width: 992px) {
+    .current {
+        padding: 50px; /* Increase padding for better readability */
+    }
+}
+ 
+    </style>
+    <title>ShoppingSite</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <h1 class="logo"><a href="/index.html">ShopKart</a></h1>
+            <ul>
+                <li><a href="#" class="current">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Our Products</a>
+                    <ul class="dropdown">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
+                        <li><a href="#">Product 4</a></li>
+                        <!-- Add more categories as needed -->
+                    </ul>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="close-icon"></div>
+        </div>
+    </nav>
+
+    <!-- Add two columns below the navigation bar -->
+    <section class="container columns" style="background-color: #171616; height: 500px;">
+       
+         <div class="column">
+            <h1 class="h1">Fresh</h1>
+            <h1 class="h1second">2022</h1>
+            <h1 class="h1">Look</h1>
+        </div> 
+        <div class="column orange-bg"><div class="container">
+  <img src="image/img.png" alt="Your Image" class="image" width="1000px" height="1000px">
+</div>
+ </div>
+        
+    </section>
+
+    <!-- Fixed sidenav -->
+    <div class="sidenav">
+        <a href="#">Electronics</a>
+        <a href="#">Jewelery</a>
+        <a href="#">Men's clothing</a>
+        <a href="#">Women's clothing</a>
+       
+        <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div>
+
+    <div class="main">
+      <h1 class="pheading">New Products</h1>
+                <section class="sec">
+                    <div class="section2">
+                        <div class="container">
+                            <div class="items">
+                                <div class="img img1">
+                                    <img
+                                        src="https://images.pexels.com/photos/1464625/pexels-photo-1464625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="name">SHOES</div>
+                            <div class="price">$5</div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur.
+                            </div>
+                        </div>
+                            
+                        <div class="items">
+                            <div class="img img2">
+                                <img
+                                    src="https://images.pexels.com/photos/3649765/pexels-photo-3649765.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">MEN's T-SHIRT</div>
+                            <div class="price">$6.34</div>
+                            <div class="info">Lorem ipsum dolor sit.</div>
+                        </div>
+                        <div class="items">
+                            <div class="img img3">
+                                <img
+                                    src="https://media.istockphoto.com/photos/folded-blue-jeans-on-a-white-background-modern-casual-clothing-flat-picture-id1281304280"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">JEANS</div>
+                            <div class="price">$9</div>
+                            <div class="info">Lorem ipsum dolor sit amet.</div>
+                        </div>
+                         
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/8839887/pexels-photo-8839887.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="name">WATCH</div>
+                            <div class="price">$9.1</div>
+                            <div class="info">Lorem ipsum dolor sit.</div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/6858618/pexels-photo-6858618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">SMART PHONE</div>
+                            <div class="price">$20</div>
+                            <div class="info">Lorem ipsum dolor sit.</div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/5552789/pexels-photo-5552789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">TELEVISION</div>
+                            <div class="price">$18</div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur.
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/4295985/pexels-photo-4295985.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">HOODIES</div>
+                            <div class="price">$6.7</div>
+                            <div class="info">Lorem ipsum dolor sit.</div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://media.istockphoto.com/photos/vintage-plates-with-silver-teaspoons-picture-id184363070"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="name">DINNER SET</div>
+                            <div class="price">$10</div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/6463348/pexels-photo-6463348.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">BLANKETS</div>
+                            <div class="price">$9.9</div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing.
+                            </div>
+                        </div>
+                        <div class="items">
+                            <div class="img img1">
+                                <img
+                                    src="https://images.pexels.com/photos/2659939/pexels-photo-2659939.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                                    alt=""
+                                />
+                            </div>
+                            
+                            <div class="name">LAPTOP</div>
+                            <div class="price">$99</div>
+                            <div class="info">
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit.
+                            </div>
+                        </div>
+                        
+                        
+                            
+                            
+                        </section> 
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+            
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+       
+    </div>
+
+    <script>
+        const nav = document.querySelector('.nav')
+        window.addEventListener('scroll', fixNav)
+
+        function fixNav() {
+            if (window.scrollY > nav.offsetHeight + 150) {
+                nav.classList.add('active')
+            } else {
+                nav.classList.remove('active')
+            }
+        }
+    </script>
+    <footer>
+    <div class="container">
+        <div class="footer-logo">
+            <div style="width: 100%; height: 100%; color: white; font-size: 135px; font-family: Syne; font-weight: 800; line-height: 102.60px; word-wrap: break-word">GET <br/>IN TOUCH</div>
+
+        </div>
+        <div class="contact-details" style="width: 100%; height: 100%; border: 1px white solid">
+            <p>Name</p><br>
+            <p>email</p><br>
+            <p> Message</p><br>
+            <!-- Add more contact details as needed -->
+        </div>
+        <div class="copyright">
+            &copy; 2023 Your Company Name. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
