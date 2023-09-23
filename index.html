@@ -552,7 +552,9 @@ footer .copyright {
                 </li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="close-icon"></div>
+            <div class="close-icon">
+                 <span>&times;</span> 
+            </div>
         </div>
     </nav>
 
@@ -740,6 +742,17 @@ footer .copyright {
     </div>
 
     <script>
+         document.addEventListener("DOMContentLoaded", function () {
+    const closeIcon = document.querySelector(".close-icon");
+
+    if (closeIcon) {
+        closeIcon.addEventListener("click", function () {
+            // Add code here to close the window or perform any desired action
+            // For example, you can use window.close() to close the current window/tab.
+            window.close();
+        });
+    }
+});
         const nav = document.querySelector('.nav')
         window.addEventListener('scroll', fixNav)
 
